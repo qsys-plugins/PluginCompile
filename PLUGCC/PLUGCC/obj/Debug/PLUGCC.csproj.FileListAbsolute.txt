@@ -1,0 +1,14 @@
+D:\yo_test\Test\PLUGCC.exe.config
+D:\yo_test\Test\PLUGCC.exe
+D:\yo_test\Test\PLUGCC.pdb
+C:\Users\brian.pratt\source\repos\PLUGCC\PLUGCC\obj\Debug\PLUGCC.csprojAssemblyReference.cache
+C:\Users\brian.pratt\source\repos\PLUGCC\PLUGCC\obj\Debug\PLUGCC.csproj.CoreCompileInputs.cache
+C:\Users\brian.pratt\source\repos\PLUGCC\PLUGCC\obj\Debug\PLUGCC.exe
+C:\Users\brian.pratt\source\repos\PLUGCC\PLUGCC\obj\Debug\PLUGCC.pdb
+D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\Test\.vscode\PLUGCC.exe.config
+D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\Test\.vscode\PLUGCC.exe
+D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\Test\.vscode\PLUGCC.pdb
+D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.csprojAssemblyReference.cache
+D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.csproj.CoreCompileInputs.cache
+D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.exe
+D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.pdb
