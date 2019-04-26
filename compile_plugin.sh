@@ -60,11 +60,11 @@ sed -i -E "s/$oldnum/$newnum/" info.lua
 oldid="$( grep 'Id' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
 #echo $oldid
 name="$( grep 'Name' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
-echo $name
+#echo $name
 
 newid="COMPILEDPLUGIN-$name-$newnum"
 newid="$( echo $newid | tr -d ' ' | tr -d '~' | tr -d '/' )"
 
 echo $newid
 sed -i -E "s/$oldid/$newid/" info.lua
-unix2dos info.lua
+unix2dos -q info.lua
