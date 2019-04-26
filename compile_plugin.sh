@@ -59,11 +59,11 @@ sed -i -E "s/$oldnum/$newnum/" info.lua
 # STEP 2 Create new Id from Name and updated Version
 oldid="$( grep 'Id' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
 #echo $oldid
-name="$( grep 'Name' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 | cut -d $'~' -f2 )"
-#echo $name
+name="$( grep 'Name' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
+echo $name
 
 newid="COMPILEDPLUGIN-$name-$newnum"
-newid="$( echo $newid | tr -d ' ' )"
+newid="$( echo $newid | tr -d ' ' | tr -d '~' | tr -d '/' )"
 
 echo $newid
 sed -i -E "s/$oldid/$newid/" info.lua
