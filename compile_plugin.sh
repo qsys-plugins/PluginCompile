@@ -67,3 +67,4 @@ newid="$( echo $newid | tr -d ' ' )"
 
 echo $newid
 sed -i -E "s/$oldid/$newid/" info.lua
+unix2dos info.lua
