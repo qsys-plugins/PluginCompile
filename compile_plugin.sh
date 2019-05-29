@@ -56,15 +56,17 @@ fi
 #echo $newnum
 sed -i -E "s/$oldnum/$newnum/" info.lua
 
-# STEP 2 Create new Id from Name and updated Version
+# STEP 2 Create new GUID if the plugin doesn't already have one
 oldid="$( grep 'Id' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
 #echo $oldid
-name="$( grep 'Name' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
-#echo $name
 
-newid="COMPILEDPLUGIN-$name-$newnum"
-newid="$( echo $newid | tr -d ' ' | tr -d '~' | tr -d '/' )"
+if test "$oldid" = "<guid>"
+then
+  echo "generating guid for plugin"
+  newid="$( uuidgen )"
+  #echo $newid
+  sed -i -E "s/$oldid/$newid/" info.lua
+fi
 
-echo $newid
-sed -i -E "s/$oldid/$newid/" info.lua
+# STEP 3 Fix up line endings
 unix2dos -q info.lua

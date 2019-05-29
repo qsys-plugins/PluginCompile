@@ -12,3 +12,10 @@ D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.cs
 D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.csproj.CoreCompileInputs.cache
 D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.exe
 D:\GIT\qsys-plugins\qsys-plugins\PluginCompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.pdb
+D:\GIT\Plugins\plugincompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.csprojAssemblyReference.cache
+D:\GIT\Plugins\plugincompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.csproj.CoreCompileInputs.cache
+D:\GIT\Plugins\plugincompile\PLUGCC.exe.config
+D:\GIT\Plugins\plugincompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.exe
+D:\GIT\Plugins\plugincompile\PLUGCC\PLUGCC\obj\Debug\PLUGCC.pdb
+D:\GIT\Plugins\plugincompile\PLUGCC.exe
+D:\GIT\Plugins\plugincompile\PLUGCC.pdb
