@@ -1,5 +1,9 @@
 #!/bin/sh
 
+# STEP 0.5 Add plugincompile dir to path temporarily
+PATH="$PATH:$(dirname $0)"
+#echo $PATH
+
 # STEP 1 Increment Version Number
 oldnum="$( grep 'Version' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
 #echo $oldnum
