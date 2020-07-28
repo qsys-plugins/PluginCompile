@@ -1,64 +1,75 @@
 #!/bin/sh
 
+if test "$1" = "CANCEL"
+then
+  exit 1
+fi
+
 # STEP 0.5 Add plugincompile dir to path temporarily
 PATH="$PATH:$(dirname $0)"
 #echo $PATH
 
-# STEP 1 Increment Version Number
-oldnum="$( grep 'Version' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
-#echo $oldnum
-newnum="$oldnum"
-
-majnum=${oldnum%%.*}
-minnum=${oldnum#*.}
-minnum=${minnum%%.*}
-fixnum=${oldnum%.*}
-fixnum=${fixnum##*.}
-devnum=${oldnum##*.}
-
-if test "$1" = "ver_maj"
+if test "$1" != "ver_none"
 then
-  echo "updating version major num"
 
-  #majnum=${oldnum:0:1}
-  ((majnum++))
-  newnum="$majnum.0.0.0"
+  # STEP 1 Increment BuildVersion Number
+  oldnum="$( grep 'BuildVersion' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
+  #echo $oldnum
+  newnum="$oldnum"
 
-elif test "$1" = "ver_min"
-then
-  echo "updating version minor num"
+  majnum=${oldnum%%.*}
+  minnum=${oldnum#*.}
+  minnum=${minnum%%.*}
+  fixnum=${oldnum%.*}
+  fixnum=${fixnum##*.}
+  devnum=${oldnum##*.}
 
-  #minnum=${oldnum:2:1}
-  ((minnum++))
-  newnum="$majnum.$minnum.0.0"
+  if test "$1" = "ver_maj"
+  then
+    echo "updating buildversion major num"
 
-elif test "$1" = "ver_fix"
-then
-  echo "updating version fix num"
+    #majnum=${oldnum:0:1}
+    ((majnum++))
+    newnum="$majnum.0.0.0"
 
-  #fixnum=${oldnum:4:1}
-  ((fixnum++))
-  newnum="$majnum.$minnum.$fixnum.0"
+  elif test "$1" = "ver_min"
+  then
+    echo "updating buildversion minor num"
 
-elif test "$1" = "ver_dev"
-then
-  echo "updating version dev num"
+    #minnum=${oldnum:2:1}
+    ((minnum++))
+    newnum="$majnum.$minnum.0.0"
 
-  #devnum=${oldnum:6:1}
-  ((devnum++))
-  newnum="$majnum.$minnum.$fixnum.$devnum"
+  elif test "$1" = "ver_fix"
+  then
+    echo "updating buildversion fix num"
 
+    #fixnum=${oldnum:4:1}
+    ((fixnum++))
+    newnum="$majnum.$minnum.$fixnum.0"
+
+  elif test "$1" = "ver_dev"
+  then
+    echo "updating buildversion dev num"
+
+    #devnum=${oldnum:6:1}
+    ((devnum++))
+    newnum="$majnum.$minnum.$fixnum.$devnum"
+
+  else
+    echo "updating buildversion dev num"
+
+    #devnum=${oldnum:6:1}
+    ((devnum++))
+    newnum="$majnum.$minnum.$fixnum.$devnum"
+
+  fi
+
+  #echo $newnum
+  sed -i -E "s/$oldnum/$newnum/" info.lua
 else
-  echo "updating version dev num"
-
-  #devnum=${oldnum:6:1}
-  ((devnum++))
-  newnum="$majnum.$minnum.$fixnum.$devnum"
-
+  echo "not updating buildversion"
 fi
-
-#echo $newnum
-sed -i -E "s/$oldnum/$newnum/" info.lua
 
 # STEP 2 Create new GUID if the plugin doesn't already have one
 oldid="$( grep 'Id' info.lua | cut -d $'\"' -f2 | cut -d $'\"' -f1 )"
